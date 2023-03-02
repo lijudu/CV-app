@@ -1,14 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function Header() {
-
-
-    // declare state variable
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [number, setNumber] = useState('')
-
-
+function PersonalInputs(props) {
     return(
         <div>
         <form>
@@ -17,35 +9,32 @@ function Header() {
                 type='text' 
                 placeholder='Name'
                 name='name'
-                value={name}
-                onChange={e => setName(e.target.value)}/>
+                value={props.nameInput}
+                onChange={props.handleChange}/>
             <br/>
             <input 
-                type='text' 
+                type='email' 
                 placeholder='Email'
                 name='email'
-                value={email}
-                onChange={e => setEmail(e.target.value)}
+                value={props.emailInput}
+                onChange={props.handleChange}
                  />
             <br/>
             <input 
                 type='text' 
                 placeholder='Phone Number'
-                name='number'
-                value={number}
-                onChange={e => setNumber(e.target.value)}
+                name='phone'
+                value={props.numberInput}
+                onChange={props.handleChange}
                 />
             <br/>
         </form>
-        <hr/>
-        {name !== '' && <p>Your name is {name}</p>}
-        {email !== '' && <p>The email is{email}</p>}
-        {number !== '' && <p>Your number is {number}</p>}
+
         </div>
     )
 }
 
 
   
-export default Header;
+export default PersonalInputs;
   
