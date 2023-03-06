@@ -4,6 +4,7 @@ import PersonalOutput from './HeaderOutput';
 import ExperienceInput from './ExperienceInput'
 import EducationInput from './EducationInput'
 import ExperienceOutput from './ExperienceOutput';
+import EducationOutput from './EducationOutput';
 
 
 
@@ -27,7 +28,7 @@ function App(){
         position: 'Software Developer',
         startDate: '2022',
         endDate: 'present',
-        description: 'Job Description here'
+        description: 'Job description here'
     }])
 
     const handleFormChange = (index, event) => {
@@ -36,20 +37,10 @@ function App(){
         setExperience(data)
     }
 
-    // const addFields = () => {
-    //     let newfield = {
-    //         company: '',
-    //         position: '',
-
-    //         setExperience([...experience, newfield])
-
-    //     }
-    // }
     
     const [counter, setCounter] = useState(0)
 
-
-    const handleSubmit = (e) => {
+    const handleExpSubmit = (e) => {
         e.preventDefault();
         setCounter(counter + 1);
         console.log(counter)
@@ -65,6 +56,50 @@ function App(){
         console.log(experience)
     }
 
+    const [education, setEducation] = useState([{
+        course: 'Some Degree',
+        university: 'Some University',
+        startDate: '2023',
+        endDate: 'expected 2025',
+        description: 'Some description here'
+    }])
+
+    const handleEduChange = (index, event) => {
+        let data = [...education]
+        data[index][event.target.name] = event.target.value
+        setEducation(data)
+    }
+
+    const [eduCounter, setEduCounter] = useState(0)
+
+
+    const handleEduSubmit = (e) => {
+        e.preventDefault();
+        setEduCounter(eduCounter + 1);
+        console.log(eduCounter)
+        let newfield = {
+            course: '',
+            university: '',
+            startDate: '',
+            endDate: '',
+            description: ''
+        }
+
+        setEducation([...education, newfield])
+        console.log(education)
+    }
+
+    const removeExpFields = (index) => {
+        let data = [...experience]
+        data.splice(index, 1)
+        setExperience(data)
+    }
+
+    const removeEduFields = (index) => {
+        let data = [...education]
+        data.splice(index, 1)
+        setEducation(data)
+    }
 
     return(
         <div className='container'>
@@ -77,7 +112,6 @@ function App(){
                 <br/>
                 <label htmlFor='workExp'>Work Experience</label>
                 <br/>
-
                     {experience.map((input, index) => {
                         return(
                             <ExperienceInput
@@ -88,14 +122,30 @@ function App(){
                                 endDateInput={input.endDate}
                                 descriptionInput={input.description}
                                 handleChange={event => handleFormChange(index, event)}
-                                handleClick={handleSubmit}
+                                handleClick={handleExpSubmit}
+                                handleDelete={removeExpFields}
                             />
                         )
                     })}
 
-
                 <br/>
-                <EducationInput/>
+                <label htmlFor='education'>Education</label>
+                <br/>
+                    {education.map((input, index) => {
+                        return(
+                            <EducationInput
+                                key={index}
+                                courseInput={input.course}
+                                universityInput={input.university}
+                                eduStartDate={input.startDate}
+                                eduEndDate={input.endDate}
+                                eduDescription={input.description}
+                                handleChange={event => handleEduChange(index, event)}
+                                handleClick={handleEduSubmit}
+                                handleDelete={removeEduFields}
+                            />
+                    )})}
+                
             </div>
             <div className='output'>
                 <PersonalOutput
@@ -103,7 +153,6 @@ function App(){
                     outputNumber={details.phone}
                     outputEmail={details.email}
                     />
-                <br/>
                 {experience.map((input, index) => {
                         return(
                             <ExperienceOutput
@@ -116,7 +165,19 @@ function App(){
                             />
                         )
                     })}
-
+                <hr/>
+                {education.map((input, index) => {
+                    return(
+                        <EducationOutput
+                            key={index}
+                            outputCourse={input.course}
+                            outputUniversity={input.university}
+                            outputStartDate={input.startDate}
+                            outputEndDate={input.endDate}
+                            outputDescription={input.description}
+                        />
+                    )
+                })}
             </div>
         </div>
     )

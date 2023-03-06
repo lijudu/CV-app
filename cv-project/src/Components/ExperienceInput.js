@@ -49,7 +49,9 @@ function ExperienceInput(props){
                     type='submit' 
                     onClick={props.handleClick}
                     >Add</button>
-                <button>Delete</button>
+                <button
+                    type='submit'
+                    onClick={props.handleDelete}>Delete</button>
         </form>
         
 

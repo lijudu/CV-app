@@ -7,7 +7,9 @@ function ExperienceOutput(props){
             <div>{props.outputPosition}</div>
             <div>{props.outputStartDate} - {props.outputEndDate}</div>
             <div>{props.outputDescription}</div>
+            <br/>
         </div>
+
     )
 }
 
