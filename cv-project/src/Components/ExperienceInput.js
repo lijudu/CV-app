@@ -1,44 +1,58 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function ExperienceInput(){
+
+function ExperienceInput(props){
     return(
         <div>
-            <form>
-                <label htmlFor='workExp'>Work Experience</label>
-                <br/>
+            <form key={props.index} onSubmit={props.handleClick}>
                 <input 
                     type='text' 
                     placeholder='Company'
-                    name='compnay'
+                    name='company'
+                    value={props.companyInput}
+                    onChange={props.handleChange}
                     />
                 <br/>
                 <input 
                     type='text' 
                     placeholder='Position'
                     name='position'
+                    value={props.positionInput}
+                    onChange={props.handleChange}
                     />
                 <br/>
                 <input 
                     type='text' 
                     placeholder='Start Date'
                     name='startDate'
+                    value={props.startDateInput}
+                    onChange={props.handleChange}
                     />
                 <br/>
                 <input 
                     type='text' 
                     placeholder='End Date'
                     name='endDate'
+                    value={props.endDateInput}
+                    onChange={props.handleChange}
                     />
                 <br/>
                 <input 
                     type='text' 
                     placeholder='Description'
                     name='description'
+                    value={props.descriptionInput}
+                    onChange={props.handleChange}
                     />
                 <br/>
-                <button>Add</button>
+                <button 
+                    type='submit' 
+                    onClick={props.handleClick}
+                    >Add</button>
                 <button>Delete</button>
         </form>
+        
+
         </div>
     )
 }

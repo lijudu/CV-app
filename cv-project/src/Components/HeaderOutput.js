@@ -3,9 +3,10 @@ import React from 'react'
 function PersonalOutput(props){
     return(
         <div>
-            <h1>{props.outputName}</h1>
+            <div>{props.outputName}</div>
             <div>{props.outputEmail}</div>
             <div>{props.outputNumber}</div>
+            <hr/>
         </div>
     )
 }
