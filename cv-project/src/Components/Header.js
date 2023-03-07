@@ -4,7 +4,6 @@ function PersonalInputs(props) {
     return(
         <div>
         <form>
-            <label htmlFor='personal'>Personal Details</label><br></br>
             <input 
                 type='text' 
                 placeholder='Name'

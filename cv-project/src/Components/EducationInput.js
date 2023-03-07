@@ -46,10 +46,8 @@ function EducationInput(props){
             <br/>
             <button
                 type='submit'
-                onClick={props.handleClick}>Add</button>
-            <button
-                type='submit'
-                onClick={props.handleDelete}>Delete</button>
+                onClick={props.handleDelete}
+                className='delete'>Delete</button>
     </form>
     </div>
     )

@@ -2,11 +2,11 @@ import React from 'react'
 
 function PersonalOutput(props){
     return(
-        <div>
-            <div>{props.outputName}</div>
-            <div>{props.outputEmail}</div>
-            <div>{props.outputNumber}</div>
-            <hr/>
+        <div className='resumeHeader'>
+            <div className='resumeName'>{props.outputName}</div>
+            <div className='resumeEmail'>{props.outputEmail}</div>
+            <div className='resumePhone'>{props.outputNumber}</div>
+
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React from 'react';
 
 
 function ExperienceInput(props){
+
     return(
         <div>
             <form key={props.index} onSubmit={props.handleClick}>
@@ -45,13 +46,11 @@ function ExperienceInput(props){
                     onChange={props.handleChange}
                     />
                 <br/>
-                <button 
-                    type='submit' 
-                    onClick={props.handleClick}
-                    >Add</button>
                 <button
                     type='submit'
-                    onClick={props.handleDelete}>Delete</button>
+                    onClick={props.handleDelete}
+                    className='delete'
+                    >Delete</button>
         </form>
         
 

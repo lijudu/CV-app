@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -14,10 +16,123 @@ code {
 
 .container{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
 }
 
-.clicked {
-  display: none;
+.inputContainer, .outputContainer {
+  width: 450px;
+  border-radius: 4px;
+  margin: 0;
+}
+
+.input, .output {
+  padding: 20px;
+}
+
+
+.inputContainer {
+  border: 1px solid #b1afaf;
+}
+
+.outputContainer{
+  border: 1px solid #171614;
+  box-shadow: 3px 3px 5px #3b3b3b;
+  height: 600px;
+}
+
+input {
+  width: 400px;
+  margin: 2px;
+  font-family: 'montserrat', 'sans-serif';
+  font-size: 0.7em;
+  border-radius: 4px;
+  border: 1px solid #b1afaf;
+  color: #3b3b3b;
+  padding: 3px;
+}
+
+button {
+  background-color: transparent;
+  font-family: 'montserrat', 'sans-serif';
+  border: 1px solid #b1afaf;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  margin: 2px;
+  width: 60px;
+}
+
+button:hover,
+button:focus{
+    box-shadow: 1em;
+    transform: translateY(-0.15em);
+    cursor: pointer;
+}
+
+.add {
+  color: #9b3801;
+}
+
+.delete {
+  color: #3b3b3b;
+}
+
+.header {
+  margin-bottom: 3px;
+  font-size: 0.9em;
+  color: #3b3b3b;
+}
+
+.resumeName{
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: larger;
+  color: #9b3801;
+}
+
+.resumeEmail, .resumePhone {
+  font-size: 0.8em;
+  padding-top: 5px;
+}
+
+.resumePhone{
+  padding-bottom: 20px;
+}
+
+.resumeHeader{
+  text-align: center;
+  color: #171614;
+}
+
+.resumeWorkEducation{
+  font-size: 0.8em;
+  font-weight:bolder;
+  border-bottom: 1px solid #37423D;
+  color: #9b3801;
+}
+
+.resumeOutput{
+  font-size: 0.7em;
+  padding: 7px 0;
+  color: #171614;
+}
+
+.companyContainer{
+  display: flex;
+  gap: 5px;
+}
+
+.titleContainer{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px
+}
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    display: grid;
+  }
 }
 
