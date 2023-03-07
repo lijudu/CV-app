@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PersonalInputs from './Header';
 import PersonalOutput from './HeaderOutput';
 import ExperienceInput from './ExperienceInput'
 import EducationInput from './EducationInput'
 import ExperienceOutput from './ExperienceOutput';
 import EducationOutput from './EducationOutput';
+import { useReactToPrint } from 'react-to-print'
 
 
 
@@ -106,10 +107,17 @@ function App(){
         setEducation(data)
     }
 
+
+    const componentRef = useRef()
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+    })
+
     return(
         <div className='container'>
             <div className='inputContainer'>
                 <div className='input'>
+                <button type='button' className='print' onClick={handlePrint}>Download as Pdf</button>
                 <div className='header'>Personal Details</div>
                 <PersonalInputs
                     nameInput={details.name}
@@ -154,7 +162,7 @@ function App(){
             </div>
             
             <div className='outputContainer'>
-                <div className='output'>
+                <div className='output'  ref={componentRef}>
                 <PersonalOutput
                     outputName={details.name}
                     outputNumber={details.phone}

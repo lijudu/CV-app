@@ -78,6 +78,14 @@ button:focus{
   color: #3b3b3b;
 }
 
+.print {
+  width: 123px;
+  color: #3b3b3b;
+  position: relative;
+  left: 285px;
+  
+}
+
 .header {
   margin-bottom: 3px;
   font-size: 0.9em;
