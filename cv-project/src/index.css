@@ -27,10 +27,13 @@ code {
   margin: 0;
 }
 
-.input, .output {
+.input {
   padding: 20px;
 }
 
+.output {
+  padding: 20px 40px;
+}
 
 .inputContainer {
   border: 1px solid #b1afaf;
