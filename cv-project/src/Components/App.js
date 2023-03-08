@@ -117,7 +117,7 @@ function App(){
         <div className='container'>
             <div className='inputContainer'>
                 <div className='input'>
-                <button type='button' className='print' onClick={handlePrint}>Download as PDF</button>
+                <button type='button' className='print' onClick={handlePrint}>Print</button>
                 <div className='header'>Personal Details</div>
                 <PersonalInputs
                     nameInput={details.name}
